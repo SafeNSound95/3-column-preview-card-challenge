@@ -33,7 +33,6 @@ html {
 body {
   background-color: hsl(0, 0%, 95%);
   font-family: "Lexend Deca", sans-serif;
-  line-height: 1;
 }
 
 /* SPECIFIC STYLES */
@@ -89,11 +88,13 @@ body {
 }
 
 .preview-card-btn {
+  border: none;
+  font-family: "Lexend Deca", sans-serif;
   display: inline-block;
   background-color: hsl(0, 0%, 95%);
   font-size: 1.5rem;
   width: 14.6rem;
-  padding: 1.5rem 3rem;
+  padding: 1.3rem;
   border-radius: 2.5rem;
 }
 
