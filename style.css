@@ -1,0 +1,173 @@
+/* DESIGN DECISIONS */
+
+/* 
+
+  Colors: 
+
+    - Bright orange: hsl(31, 77%, 52%)
+    - Dark cyan: hsl(184, 100%, 22%)
+    - Very dark cyan: hsl(179, 100%, 13%)
+    - Transparent white: hsla(0, 0%, 100%, 0.75)
+    - Very light gray : hsl(0, 0%, 95%)
+
+  Fonts:
+    - [Lexend Deca](https://fonts.google.com/specimen/Lexend+Deca)   weight:400
+    - [Big Shoulders Display](https://fonts.google.com/specimen/Big+Shoulders+Display)  weight:700
+
+
+*/
+
+/* GENERAL STYLES */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-y: scroll;
+}
+
+body {
+  background-color: hsl(0, 0%, 95%);
+  font-family: "Lexend Deca", sans-serif;
+  line-height: 1;
+}
+
+/* SPECIFIC STYLES */
+
+.preview-card-container {
+  display: grid;
+  max-width: 92rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 10rem auto;
+}
+
+.preview-card {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  padding: 4.8rem;
+}
+
+.preview-card:nth-child(1) {
+  /* top-left | top-right | bottom-right | bottom-left */
+  border-radius: 1rem 0 0 1rem;
+}
+
+.preview-card:nth-child(3) {
+  /* top-left | top-right | bottom-right | bottom-left */
+  border-radius: 0 1rem 1rem 0;
+}
+
+.sedan-card {
+  background-color: hsl(31, 77%, 52%);
+}
+
+.suv-card {
+  background-color: hsl(184, 100%, 22%);
+}
+
+.luxury-card {
+  background-color: hsl(179, 100%, 13%);
+}
+
+.preview-card-heading {
+  color: hsl(0, 0%, 95%);
+  font-family: "Big Shoulders Display", cursive;
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+
+.preview-card-text {
+  color: hsla(0, 0%, 100%, 0.75);
+  font-size: 1.5rem;
+  line-height: 1.7;
+  margin-bottom: 3.7rem;
+}
+
+.preview-card-btn {
+  display: inline-block;
+  background-color: hsl(0, 0%, 95%);
+  font-size: 1.5rem;
+  width: 14.6rem;
+  padding: 1.5rem 3rem;
+  border-radius: 2.5rem;
+}
+
+.preview-card-btn:hover {
+  color: hsl(0, 0%, 95%);
+}
+
+.sedan-btn {
+  color: hsl(31, 77%, 52%);
+}
+
+.sedan-btn:hover {
+  background-color: hsl(31, 77%, 52%);
+}
+
+.suv-btn {
+  color: hsl(184, 100%, 22%);
+}
+
+.suv-btn:hover {
+  background-color: hsl(184, 100%, 22%);
+}
+
+.luxury-btn {
+  color: hsl(179, 100%, 13%);
+}
+
+.luxury-btn:hover {
+  background-color: hsl(179, 100%, 13%);
+}
+
+.sedan-btn:hover,
+.luxury-btn:hover,
+.suv-btn:hover {
+  outline: 0.3rem solid hsla(0, 0%, 100%, 0.75);
+  cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+
+/* 976 px */
+
+@media (max-width: 61em) {
+  .preview-card-container {
+    max-width: 75rem;
+  }
+
+  .preview-card {
+    padding: 4.8rem 2.4rem;
+  }
+}
+
+/* 768 px */
+@media (max-width: 48em) {
+  .preview-card-container {
+    max-width: 33rem;
+    grid-template-columns: 1fr;
+  }
+
+  .preview-card:nth-child(1) {
+    /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .preview-card:nth-child(3) {
+    /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .preview-card-text {
+    margin-bottom: -1rem;
+  }
+
+  .preview-card {
+    padding: 4.8rem;
+  }
+}
